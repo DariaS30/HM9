@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Lora:wght@700&family=Quicksand:wght@400;500;700&family=Roboto+Slab:wght@700&display=swap'); 
+
+$white: #fff;
+$white40: rgba(255, 255, 255, 0.4);
+$grey: #333;
+$dark: #000;
+$dark50: rgba(0, 0 ,0, 0.5);
+$dark85: rgba(0, 0 ,0, 0.85);
+$green: #1ED400;
+$green40: rgba(30, 212, 0, 0.4);
+$cyan: #027FA5;
+$white-smoke: #D5D8D8;
+
+@mixin Roboto($fs, $fw, $lh){
+    font-family: 'Roboto Slab', serif;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+} 
+
+@mixin Lora($fs, $fw, $lh){
+    font-family: 'Lora', serif;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+@mixin Lato($fs, $fw, $lh){
+    font-family: 'Lato', sans-serif;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+@mixin Quiksand($fs, $fw, $lh){
+    font-family: 'Quiksand', sans-serif;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+@mixin flex($js, $ai, $gp){
+    display: flex;
+    justify-content: $js;
+    align-items: $ai;
+    gap: $gp;
+}
+
+*{
+    border: none;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.header{
+    @include flex(space-around, center, none);
+    background-color: $dark85;
+    padding: 36px 0;
+    position: relative;
+    top: 0;
+    &__logo{
+        @include Roboto(32px, 700, 32px);
+        color: $white;
+    }
+    .nav{
+        &__item{
+            &-link{
+                color: $white;
+            }
+        }
+    }
+    .social{
+        &__item{
+            &-link{
+                svg{
+                    path{
+                        fill: $white;
+                    }
+                    rect{
+                        fill: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.nav{
+    @include flex(center, center, 56px);
+    &__item{
+        &-link{
+            @include Lato(22px, 500, 22px);
+        }
+    }
+}
+
+.LangBar{
+    @include flex(center, center, 4px)
+}
+
+.social{
+    @include flex(center, center, 32px);
+}
+
+.bg-photo{
+    background-image: url('../IMG/bg1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 100%;
+    width: 100%;
+    // height: 964px;
+    margin-top: -119px;
+    @include flex(center, center, 0px);
+    flex-direction: column;
+    padding: 200px 0 0 0;
+    .plane-svg{
+        padding: 72px 0 115px 0;
+    }
+}
+
+.call-to-action{
+    @include flex(center, center, 32px);
+    flex-direction: column;
+    background: $dark85;
+    padding: 48px;
+
+    h1{
+        @include Lora(84px, 700, 100px);
+        color: $white;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    span{
+        @include Lato(24px, 400, 24px);
+        color: $white;
+    }
+
+    .btn{
+        padding: 21px 110px;
+    }
+}
+
+.btn{
+    background: $green;
+    color: $white;
+    text-transform: uppercase;
+    @include Lato(16px, 900, 16px);
+}
+
+
+.about-us{
+    @include flex(center, center, 32px);
+    flex-direction: column;
+    background: $white;
+
+    h2{
+        @include Roboto(56px, 700, normal);
+        color: $grey;
+        text-transform: uppercase;
+        padding: 120px 0 0 0;
+    }
+
+    p{
+        @include Quiksand(20px, 500, 32px);
+        color: $grey;
+        width: 65%;
+        text-align: center;
+    }
+}
+
+.benefits-block{
+    @include flex(space-around, center, 0);
+    max-width: 100%;
+    .outline{
+        @include flex(space-around, center, 0);
+        width: 100%;
+        span{
+            @include Quiksand(30px, 400, 32px);
+            color: $grey;
+            padding: 24px 0 124px 20px;
+            text-align: center;
+        }
+    }
+}
+
+.item{
+    .text-with-svg{
+        position: relative;
+        @include flex(center, center, 0);
+        h3{
+            @include Roboto(144px, 700, normal);
+            text-transform: uppercase;
+            color: $green;
+            position: relative;
+            padding: 60px;
+        }
+    
+        svg{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 4%);
+            z-index: 0;
+        }
+    }
+}
+
+
+
+.trip{
+    @include flex(center, center, 16px);
+    flex-direction: column;
+    text-align: center;
+    background-image: url('../IMG/ken-cheung-VbLTNceBTFE-unsplash\ 1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: sticky;
+    min-width: 100%;
+    width: 100%;
+    height: 758px;
+    h1{
+        @include Roboto(56px, 700, normal);
+        color: $white;
+        text-transform: uppercase;
+    }
+
+    h2{
+        @include Roboto(144px, 700, 144px);
+        color: $white;
+    }
+
+    text{
+        @include Quiksand(24px, 500, 18px);
+        text-transform: uppercase;
+        color: $white;
+    }
+
+    p{
+        @include Quiksand(24px, 400, 32px);
+        color: $white;
+        padding: 16px 0 0 0;
+        width: 65%; 
+    }
+
+    .line{
+        border-bottom: 3px solid $white;
+        width: 300px;
+    }
+
+    span{
+        @include Quiksand(28px, 500, 32px);
+        color: $white;
+        text-transform: uppercase;
+        padding: 24px 0 0 0;
+    }
+
+    .choise{
+        @include Quiksand(20px, 700, 18px);
+        background: $green;
+        color: $white;
+        padding: 19px 50px;
+    }    
+}
+
+.popular-ways{
+    @include flex(center, center, 40px);
+    flex-direction: column;
+    padding: 120px 0 0 0;
+    max-width: 100%;
+    
+
+    h1{
+        @include Roboto(56px, 700, normal);
+        color: $grey;
+        text-transform: uppercase;
+    }
+    
+}
+
+.cases{
+    @include flex(space-around, center, 40px);
+    .item{
+        position: relative;
+    
+        text{
+            @include Roboto(15px, 400, 18px);
+            position: absolute;
+            top: 10px; 
+            left: 0; 
+            color: $white;
+            background-color: $dark85;
+            padding: 5px 8px;
+        }
+    
+        img{
+            max-width: 100%;
+            max-width: 100%;
+            width: 414px;
+            height: auto;
+        }
+    }  
+}
+
+
+.more-info{
+    @include flex(center, center, 8px);
+    flex-direction: column;
+
+    button{
+        @include Roboto(20px, 700, 18px);
+        background: $green;
+        color: $white;
+        text-transform: uppercase;
+        padding: 19px 62px;
+    }
+
+    p{
+        @include Quiksand(14px, 500, 18px);
+        color: $grey;
+        text-align: center;
+    }
+
+    svg{
+        padding: 0 0 72px 0;
+    }
+}
+
+.travel-stories{
+    background-image: url('../IMG/jeremy-bishop-TI_3eaoMyjo-unsplash\ 1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 100%;
+    width: 100%;
+    height: 560px;
+    background-color: $green40;
+    @include flex(center, center, 32px);
+    flex-direction: column;
+  
+    h1{
+        @include Roboto(56px, 700, normal);
+        padding: 40px 0 0 0;
+        color: $white;
+        text-transform: uppercase;
+    }
+
+    .cases{
+        @include flex(space-around, center, 112px);
+        position: relative;
+
+        .item{
+            padding: 0 0 64px 0;
+
+            text{
+                @include Roboto(14px, 400, 18px);
+                position: absolute;
+                top: 10px; 
+                left: 8px; 
+                color: $white;
+                background-color: $dark85;
+                padding: 5px 8px;
+            }
+
+            .img1{
+                max-width: 100%;
+                max-height: 100%;
+                width: 341px;
+                height: auto;
+            }
+                
+            svg{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            
+        }
+    }
+}
+
+
+.footer{
+    @include flex(space-around, center, none);
+    background: url('../IMG/imgMountains\ 1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 96px 0;
+    &__logo{
+        @include Roboto(32px, 700, 32px);
+        color: $grey;
+    }
+    .nav{
+        &__item{
+            &-link{
+                color: $grey;
+            }
+        }
+    }
+    .social{
+        &__item{
+            &-link{
+                svg{
+                    path{
+                        fill: $grey;
+                    }
+                    rect{
+                        fill: $grey;
+                    }
+                }
+            }
+        }
+    }
+}
+
